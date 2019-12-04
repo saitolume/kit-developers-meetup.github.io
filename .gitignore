@@ -69,6 +69,6 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# GraphQL generated
+# GraphQL generated files
 graphql.json
-src/graphql.ts
+src/__generated__/
