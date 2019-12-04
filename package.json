@@ -1,0 +1,95 @@
+{
+  "name": "kit-developers-meetup.github.io",
+  "description": "KIT Develpers Meetup Official Site",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": "Tadao Iseki <saitoeku3@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kit-developers-meetup/kit-developers-meetup.github.io"
+  },
+  "dependencies": {
+    "gatsby": "^2.16.1",
+    "gatsby-image": "^2.2.29",
+    "gatsby-plugin-manifest": "^2.2.23",
+    "gatsby-plugin-offline": "^3.0.16",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-sharp": "^2.2.31",
+    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-plugin-typescript": "^2.1.15",
+    "gatsby-remark-prismjs": "^3.3.20",
+    "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-transformer-remark": "^2.6.32",
+    "gatsby-transformer-sharp": "^2.2.23",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "prismjs": "^1.17.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.4.0",
+    "styled-normalize": "^8.0.6"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.8.1",
+    "@graphql-codegen/introspection": "^1.8.1",
+    "@graphql-codegen/typescript": "^1.8.1",
+    "@graphql-codegen/typescript-operations": "^1.8.1",
+    "@graphql-codegen/typescript-react-apollo": "^1.8.1",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^12.11.2",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@types/react-helmet": "^5.0.12",
+    "@types/styled-components": "^4.1.19",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "@typescript-eslint/typescript-estree": "^2.5.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "textlint": "^11.4.0",
+    "textlint-rule-preset-jtf-style": "^2.3.4",
+    "typescript": "^3.6.4",
+    "typescript-styled-plugin": "^0.15.0"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "codegen": "graphql-codegen --config codegen.yaml",
+    "dev": "gatsby develop",
+    "format": "yarn format:prettier && yarn format:eslint && yarn format:textlint",
+    "format:eslint": "eslint --fix \"**/*.{js,ts,tsx}\"",
+    "format:prettier": "prettier --write \"**/*.{json,md}\"",
+    "format:textlint": "textlint --fix src/blog/*.md",
+    "lint:src": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint:text": "textlint src/blog/*.md",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "yarn format:eslint",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "yarn format:prettier",
+      "git add"
+    ],
+    "*.md": [
+      "yarn format:textlint",
+      "git add"
+    ]
+  }
+}

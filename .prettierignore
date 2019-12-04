@@ -1,0 +1,10 @@
+## Gatsby
+/.cache
+/public
+
+## Graphql
+src/__generated__/graphql.ts
+graphql.json
+
+## npm
+package-lock.json

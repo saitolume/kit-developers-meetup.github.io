@@ -1,0 +1,6 @@
+gatsby-config.js
+gatsby-node.js
+gatsby-browser.js
+/public
+/src/__generated__
+/textlint
